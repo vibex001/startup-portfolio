@@ -1,0 +1,116 @@
+/* Base Dark Charcoal Theme & Custom Tech Grid */
+    body {
+      background-color: #07090E;
+      color: #F1F5F9;
+      overflow-x: hidden;
+    }
+
+    /* Subtle Glowing Cyan Blueprint Grid */
+    .cyber-grid {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 240, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 240, 255, 0.045) 1px, transparent 1px);
+    }
+
+    .cyber-grid-fade {
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 50%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 50%, transparent 100%);
+    }
+
+    /* Glassmorphism Cards with Cyan Edge Highlight */
+    .tech-card {
+      background: linear-gradient(145deg, rgba(22, 30, 46, 0.75) 0%, rgba(11, 15, 23, 0.9) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(34, 211, 238, 0.16);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tech-card:hover {
+      border-color: rgba(0, 240, 255, 0.55);
+      box-shadow: 0 0 28px -6px rgba(0, 240, 255, 0.28);
+      transform: translateY(-3px);
+    }
+
+    .ambient-glow {
+      animation: ambientPulse 8s ease-in-out infinite alternate;
+    }
+
+    .solution-card {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .solution-card.is-visible { opacity: 1; transform: translateY(0); }
+    .solution-card.is-visible:nth-child(2) { transition-delay: 90ms; }
+    .solution-card.is-visible:nth-child(3) { transition-delay: 180ms; }
+    .solution-card.is-visible:nth-child(4) { transition-delay: 270ms; }
+    .solution-card.is-visible:nth-child(5) { transition-delay: 360ms; }
+    .solution-card.is-visible:nth-child(6) { transition-delay: 450ms; }
+
+    .solution-card.is-visible:hover {
+      border-color: rgba(0, 240, 255, 0.65);
+      box-shadow: 0 0 32px -6px rgba(0, 240, 255, 0.35);
+      transform: translateY(-6px);
+      transition-delay: 0ms;
+    }
+
+    @keyframes ambientPulse {
+      from { opacity: 0.65; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1.04); }
+    }
+
+    /* Smooth View Transitions */
+    .page-view {
+      display: none;
+      animation: fadeInSlide 0.35s ease-out forwards;
+    }
+
+    .page-view.active {
+      display: block;
+    }
+
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ambient-glow,
+      .solution-card {
+        animation: none;
+      }
+
+      .solution-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .solution-card i {
+        transition: none;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07090E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1F2A40;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #06B6D4;
+    }
