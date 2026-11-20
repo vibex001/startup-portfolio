@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 
 const CONTACT_EMAIL = 'olaiya.ayomide2005@gmail.com';
 const solutions = [
-  { title: 'Rider & COD Reconciliation', category: 'Logistics Operations', icon: 'fa-truck-fast', description: 'Track riders, assigned orders, delivery fees, COD settlements, and daily reconciliation from one control hub.' },
-  { title: 'Curriculum & Exam Generator', category: 'School Productivity', icon: 'fa-book-open', description: 'Generate curriculum-aligned lesson plans, weekly schedules, exam papers, and marking schemes.' },
-  { title: 'Micro-Inventory & Stock Alerts', category: 'Retail Automation', icon: 'fa-boxes-stacked', description: 'Monitor product levels, expiry dates, low-stock alerts, and replenishment activity across your business.' },
-  { title: 'Student Fee Recovery Portal', category: 'School Finance', icon: 'fa-money-bill-transfer', description: 'Manage student balances, payment progress, overdue accounts, digital receipts, and automated reminders.' },
-  { title: 'Instant Report Card Compiler', category: 'Academic Reporting', icon: 'fa-chart-column', description: 'Compile student scores, subject assessments, grades, remarks, and printable report cards in one workflow.' },
-  { title: 'WhatsApp Orders & Invoicing', category: 'Sales Automation', icon: 'fa-file-invoice-dollar', description: 'Turn WhatsApp conversations into structured orders, invoices, payment links, and trackable fulfillment stages.' }
+  { title: 'Rider & COD Reconciliation', category: 'Logistics Operations', image: '/solutions/logistics-reconciliation.jpg', description: 'Track riders, assigned orders, delivery fees, COD settlements, and daily reconciliation from one control hub.' },
+  { title: 'Curriculum & Exam Generator', category: 'School Productivity', image: '/solutions/curriculum-exam-generator.jpg', description: 'Generate curriculum-aligned lesson plans, weekly schedules, exam papers, and marking schemes.' },
+  { title: 'Micro-Inventory & Stock Alerts', category: 'Retail Automation', image: '/solutions/micro-inventory.jpg', description: 'Monitor product levels, expiry dates, low-stock alerts, and replenishment activity across your business.' },
+  { title: 'Student Fee Recovery Portal', category: 'School Finance', image: '/solutions/fee-recovery.jpg', description: 'Manage student balances, payment progress, overdue accounts, digital receipts, and automated reminders.' },
+  { title: 'Instant Report Card Compiler', category: 'Academic Reporting', image: '/solutions/report-card-compiler.jpg', description: 'Compile student scores, subject assessments, grades, remarks, and printable report cards in one workflow.' },
+  { title: 'WhatsApp Orders & Invoicing', category: 'Sales Automation', image: '/solutions/whatsapp-orders.jpg', description: 'Turn WhatsApp conversations into structured orders, invoices, payment links, and trackable fulfillment stages.' }
 ];
 
 function App() {
@@ -272,8 +272,8 @@ function App() {
             {solutions.map((solution) => (
               <article key={solution.title} className="solution-card tech-card rounded-2xl overflow-hidden group">
                 <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-charcoal-800 via-charcoal-900 to-charcoal-950 border-b border-charcoal-800 flex items-center justify-center relative">
-                  <div className="absolute inset-0 cyber-grid opacity-50"></div>
-                  <i className={`fa-solid ${solution.icon} relative text-5xl text-cyan-400/80 transition-transform duration-500 group-hover:scale-110`} aria-hidden="true"></i>
+                  <img src={solution.image} alt={`Illustration of ${solution.title}`} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none"></div>
                 </div>
                 <div className="p-6">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-400">{solution.category}</span>
@@ -477,8 +477,8 @@ function App() {
           {solutions.map((solution) => (
             <article key={solution.title} className="tech-card rounded-2xl overflow-hidden group">
               <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-charcoal-800 via-charcoal-900 to-charcoal-950 border-b border-charcoal-800 flex items-center justify-center relative">
-                <div className="absolute inset-0 cyber-grid opacity-50"></div>
-                <i className={`fa-solid ${solution.icon} relative text-5xl text-cyan-400/80 transition-transform duration-500 group-hover:scale-110`} aria-hidden="true"></i>
+                <img src={solution.image} alt={`Illustration of ${solution.title}`} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none"></div>
               </div>
               <div className="p-6">
                 <div className="flex items-start justify-between gap-4">
