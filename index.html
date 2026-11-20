@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07090E" />
+    <title>Crank Energy | Tech Staffing, Business Strategy &amp; Digital Innovation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace']
+            },
+            colors: {
+              charcoal: {
+                950: '#07090E',
+                900: '#0B0F17',
+                850: '#101622',
+                800: '#161E2E',
+                700: '#1F2A40'
+              },
+              cyan: {
+                400: '#22D3EE',
+                500: '#06B6D4',
+                glow: '#00F0FF'
+              }
+            },
+            boxShadow: {
+              'cyan-sm': '0 0 15px -3px rgba(0, 240, 255, 0.25)',
+              'cyan-md': '0 0 25px -5px rgba(0, 240, 255, 0.35)',
+              'cyan-lg': '0 0 40px -8px rgba(0, 240, 255, 0.45)'
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-charcoal-950 text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
